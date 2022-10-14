@@ -1,4 +1,4 @@
-# TikDow Telegram BOT
+# TikDo Telegram BOT
 
 This is BOT Telegram downloader TikTok/Douyin. Download videos without watermark by pasting share link in send message.
 
