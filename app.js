@@ -4,7 +4,10 @@ const { Telegraf } = require("telegraf");
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
-bot.hears(/video (.+)/, async (ctx) => {
+const prefix_video = `/${process.env.PREFIX_VIDEO} (.+)`;
+const prefix_music = `/${process.env.PREFIX_MUSIC} (.+)`;
+
+bot.hears(new RegExp(prefix_video), async (ctx) => {
   const messageText = ctx.match[1];
   const res = await axios.get(`${process.env.API_URL}?url=${messageText}`);
   const { data } = res;
@@ -22,7 +25,7 @@ bot.hears(/video (.+)/, async (ctx) => {
   }
 });
 
-bot.hears(/music (.+)/, async (ctx) => {
+bot.hears(new RegExp(prefix_music), async (ctx) => {
   const messageText = ctx.match[1];
   const res = await axios.get(`${process.env.API_URL}?url=${messageText}`);
   const { data } = res;

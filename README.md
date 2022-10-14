@@ -30,6 +30,8 @@ Fill up all the fields. Meaning of each fields are discussed below:
 
 - **BOT_TOKEN** : The telegram bot token that you get from [@BotFather](https://t.me/botfather)
 - **API_URL** : API URL you get from [Douyin_TikTok_Download_API(抖音/TikTok 无水印解析 API)](https://github.com/Evil0ctal/Douyin_TikTok_Download_API)
+- **PREFIX_VIDEO** : Change this if you want a custom command bot prefix to download video
+- **PREFIX_MUSIC** : Change this if you want a custom command bot prefix to download music
 
 # Deploying
 
