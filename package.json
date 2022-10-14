@@ -1,0 +1,23 @@
+{
+  "name": "tikdo",
+  "version": "1.0.0",
+  "description": "Telegram BOT version downloader to download TikTok/Douyin video.",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon --trace-warnings app.js",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "TikTok",
+    "Douyin",
+    "video",
+    "downloader"
+  ],
+  "author": "Fiki Fadilah Putra",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.1.2",
+    "dotenv": "^16.0.3",
+    "telegraf": "^4.10.0"
+  }
+}
