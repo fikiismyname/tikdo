@@ -9,7 +9,7 @@ const prefix_music = `/${process.env.PREFIX_MUSIC} (.+)`;
 
 const prefix_copy = `/.+复制打开抖音.+`;
 
-bot.hears(new RegExp(all_reg), async (ctx) => {
+bot.hears(new RegExp(prefix_copy), async (ctx) => {
   const messageText = ctx.match[1];
   console.log(messageText)
   console.log(ctx)
