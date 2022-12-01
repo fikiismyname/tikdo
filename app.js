@@ -12,7 +12,7 @@ const prefix_copy = `/.+复制打开抖音.+`;
 
 bot.hears(new RegExp(prefix_copy), async (ctx) => {
   var str = ctx.match.input
-  var index = str.indexOf(str,'https')
+  var index = str.indexOf('https')
   var url = str.substr(index,-1)
   console.log("222",str,index)
   console.log("333",url)
