@@ -11,9 +11,7 @@ const prefix_copy = `/.+复制打开抖音.+`;
 
 function urlify(text) {
   var urlRegex = /(https?:\/\/[^\s]+)/g;
-  return text.replace(urlRegex, function(url) {
-    return url
-  })
+  return text.match(urlRegex)[1];
 }
 
 bot.hears(new RegExp(prefix_copy), async (ctx) => {
