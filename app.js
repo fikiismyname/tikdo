@@ -7,6 +7,32 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
 const prefix_video = `/${process.env.PREFIX_VIDEO} (.+)`;
 const prefix_music = `/${process.env.PREFIX_MUSIC} (.+)`;
 
+const prefix_copy = `/.+复制打开抖音.+`;
+
+bot.hears(new RegExp(all_reg), async (ctx) => {
+  const messageText = ctx.match[1];
+  console.log(messageText)
+  console.log(ctx)
+
+  // const res = await axios.get(`${process.env.API_URL}?url=${messageText}`);
+  // const { data } = res;
+  // if (data.status === "success") {
+  //   await ctx.replyWithVideo(
+  //       {
+  //         url: data.video_data.nwm_video_url,
+  //       },
+  //       {
+  //         caption: `INFORMATION:\n\n- Video title: ${data.desc}\n- Audio: ${data.music.title}\n- Author Nickname: ${data.author.nickname}\n\nTotal parsing time: ${data.total_time} seconds`,
+  //       }
+  //   );
+  // } else {
+  //   await ctx.reply(data.reason);
+  // }
+});
+
+
+
+
 bot.hears(new RegExp(prefix_video), async (ctx) => {
   const messageText = ctx.match[1];
   const res = await axios.get(`${process.env.API_URL}?url=${messageText}`);
