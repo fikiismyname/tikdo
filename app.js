@@ -9,14 +9,14 @@ const prefix_music = `/${process.env.PREFIX_MUSIC} (.+)`;
 
 const prefix_copy = `/.+复制打开抖音.+`;
 
-function urlify(text) {
-  var urlRegex = /(https?:\/\/[^\s]+)/g;
-  return text.match(urlRegex)[1];
-}
 
 bot.hears(new RegExp(prefix_copy), async (ctx) => {
-  console.log("111",ctx.match.input)
-  console.log("222",urlify(ctx.match.input))
+  var str = ctx.match.input
+  console.log("111",str)
+
+  var regex = /^(https?:\/\/[^/]+(\/[\w-]+)+)/;
+  var url = str.match(regex)[0];
+  console.log("222",url)
 
   // const res = await axios.get(`${process.env.API_URL}?url=${messageText}`);
   // const { data } = res;
