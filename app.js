@@ -14,23 +14,20 @@ bot.hears(new RegExp(prefix_copy), async (ctx) => {
   var str = ctx.match.input
   var index = str.indexOf('https')
   var url = str.substring(index)
-  console.log("222",str,index)
-  console.log("333",url)
-
-  // const res = await axios.get(`${process.env.API_URL}?url=${messageText}`);
-  // const { data } = res;
-  // if (data.status === "success") {
-  //   await ctx.replyWithVideo(
-  //       {
-  //         url: data.video_data.nwm_video_url,
-  //       },
-  //       {
-  //         caption: `INFORMATION:\n\n- Video title: ${data.desc}\n- Audio: ${data.music.title}\n- Author Nickname: ${data.author.nickname}\n\nTotal parsing time: ${data.total_time} seconds`,
-  //       }
-  //   );
-  // } else {
-  //   await ctx.reply(data.reason);
-  // }
+  const res = await axios.get(`${process.env.API_URL}?url=${url}`);
+  const { data } = res;
+  if (data.status === "success") {
+    await ctx.replyWithVideo(
+        {
+          url: data.video_data.nwm_video_url,
+        },
+        {
+          caption: `INFORMATION:\n\n- Video title: ${data.desc}\n- Audio: ${data.music.title}\n- Author Nickname: ${data.author.nickname}\n\nTotal parsing time: ${data.total_time} seconds`,
+        }
+    );
+  } else {
+    await ctx.reply(data.reason);
+  }
 });
 
 
