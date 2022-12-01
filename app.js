@@ -14,10 +14,10 @@ bot.hears(new RegExp(prefix_video), async (ctx) => {
   if (data.status === "success") {
     await ctx.replyWithVideo(
       {
-        url: data.nwm_video_url,
+        url: data.video_data.nwm_video_url,
       },
       {
-        caption: `INFORMATION:\n\n- Video title: ${data.video_title}\n- Audio: ${data.video_music_title}\n- Author Nickname: ${data.video_author_nickname}\n\nTotal parsing time: ${data.analyze_time} seconds`,
+        caption: `INFORMATION:\n\n- Video title: ${data.desc}\n- Audio: ${data.music.title}\n- Author Nickname: ${data.author.nickname}\n\nTotal parsing time: ${data.total_time} seconds`,
       }
     );
   } else {
