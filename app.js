@@ -12,10 +12,9 @@ const prefix_copy = `/.+复制打开抖音.+`;
 
 bot.hears(new RegExp(prefix_copy), async (ctx) => {
   var str = ctx.match.input
-  console.log("111",str)
-  var regex = /^(https?:\/\/[^/]+(\/[\w-]+)+)/;
-  console.log("222",  str.match(regex))
-  var url = str.match(regex)[1];
+  var index = str.indexOf(str,'https')
+  var url = str.substr(index,-1)
+  console.log("222",str,index)
   console.log("333",url)
 
   // const res = await axios.get(`${process.env.API_URL}?url=${messageText}`);
