@@ -10,8 +10,9 @@ const prefix_music = `/${process.env.PREFIX_MUSIC} (.+)`;
 const prefix_copy = `/.+复制打开抖音.+`;
 
 bot.hears(new RegExp(prefix_copy), async (ctx) => {
-  console.log("111",ctx.input)
-  console.log("222",ctx.input[0])
+  console.log("111",ctx)
+  console.log("222",ctx.match)
+  console.log("333",ctx.input)
 
   // const res = await axios.get(`${process.env.API_URL}?url=${messageText}`);
   // const { data } = res;
